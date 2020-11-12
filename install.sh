@@ -28,7 +28,7 @@ swapon /dev/sda2
 mount /dev/sda3 /mnt
 mkdir /mnt/boot/EFI
 mount /dev/sda1 /mnt/boot/efi
-pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager wine lib32-gnutls steam lutris sudo discord
+pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager sudo
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Bratislava /etc/localtime
@@ -52,4 +52,5 @@ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
 systemctl enable gdm.service
+pacman -S wine lutris steam discord lib32-gnutls qbittorrent
 echo 'All done, exit chroot and off you go'
