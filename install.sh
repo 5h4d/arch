@@ -40,6 +40,4 @@ genfstab -U /mnt >> /mnt/etc/fstab
 mv post.sh /mnt
 chmod +x /mnt/post.sh
 arch-chroot /mnt
-echo Remove post.sh
-read tmpvar
-rm /mnt/post.sh
+rm -f /mnt/post.sh
