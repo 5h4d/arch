@@ -1,5 +1,5 @@
-read -p 'Are you sure you want to install Arch to /dev/sda? [y/N]:' checkcorrectdisk
-if ! [$checkcorrectdisk = 'y'] && ! [$checkcorrectdisk = 'Y']
+read -p 'Are you sure you want to install Arch to /dev/sda? [y/N]: ' checkcorrectdisk
+if ! [ $checkcorrectdisk = 'y' ] && ! [ $checkcorrectdisk = 'Y' ]
 then 
   echo 'Edit script to install to a different drive or partitions'
   exit
