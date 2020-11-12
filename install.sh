@@ -39,5 +39,8 @@ pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager
 genfstab -U /mnt >> /mnt/etc/fstab
 mv post.sh /mnt
 chmod +x /mnt/post.sh
+echo 'After you are chrooted execute the second part of the script with ./post.sh'
+echo 'Press any key to chroot...'
+read tmpvar
 arch-chroot /mnt
 rm -f /mnt/post.sh
