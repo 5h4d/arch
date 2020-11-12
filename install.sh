@@ -30,6 +30,6 @@ mkdir /mnt/boot/EFI
 mount /dev/sda1 /mnt/boot/efi
 pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager sudo
 genfstab -U /mnt >> /mnt/etc/fstab
-mv post.sh /mnt/root
+mv post.sh /mnt
 chmod +x /mnt/root/post.sh
 arch-chroot /mnt
