@@ -26,7 +26,7 @@ mkfs.fat -F32 /dev/sda1
 mkswap /dev/sda2
 swapon /dev/sda2
 mount /dev/sda3 /mnt
-mkdir /mnt/boot/EFI
+mkdir -p /mnt/boot/EFI
 mount /dev/sda1 /mnt/boot/EFI
 pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager grub efibootmgr dosfstools mtools
 genfstab -U /mnt >> /mnt/etc/fstab
