@@ -11,6 +11,7 @@ echo '127.0.1.1     arch.localdomain    arch' >> /etc/hosts
 echo 'Root password'
 passwd
 useradd yee
+pacman -S sudo
 usermod -aG wheel,audio,video,optical,storage yee
 echo 'yee password'
 passwd yee
