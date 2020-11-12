@@ -10,12 +10,12 @@ echo '::1           localhost' >> /etc/hosts
 echo '127.0.1.1     arch.localdomain    arch' >> /etc/hosts
 echo 'Root password'
 passwd
-read -p 'What name do you want the regular user to have?' username
+read -p 'What name do you want the regular user to have?: ' username
 useradd $username
 pacman -S sudo
 y
 usermod -aG wheel,audio,video,optical,storage $username
-echo 'Password for $username'
+echo 'Password for '$username
 passwd $username
 sed -i '/%wheel ALL=(ALL) ALL/s/^#//g' /etc/sudoers
 grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
