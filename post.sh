@@ -1,7 +1,7 @@
 ln -sf /usr/share/zoneinfo/Europe/Bratislava /etc/localtime
 hwclock --systohc
-sed -i '/en_US.UTF-8 UTF-8/s/^#//g'
-sed -i '/sk_SK.UTF-8 UTF-8/s/^#//g'
+sed -i '/en_US.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
+sed -i '/sk_SK.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
 locale-gen
 echo 'LANG=en_US.UTF-8' >> /etc/locale.conf
 echo 'arch' >> /etc/hostname
@@ -19,5 +19,4 @@ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
 systemctl enable gdm.service
-pacman -S wine lutris steam discord lib32-gnutls qbittorrent
 echo 'All done, exit chroot and off you go'
