@@ -28,7 +28,7 @@ swapon /dev/sda2
 mount /dev/sda3 /mnt
 mkdir /mnt/boot/EFI
 mount /dev/sda1 /mnt/boot/EFI
-pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager sudo grub efibootmgr dosfstools mtools
+pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager grub efibootmgr dosfstools mtools
 genfstab -U /mnt >> /mnt/etc/fstab
 mv post.sh /mnt
 chmod +x /mnt/post.sh
