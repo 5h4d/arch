@@ -6,7 +6,7 @@ then
 fi
 
 echo 'This script assigns 20GB of space on the disk to swap by default'
-echo "If you'd like to change this press Ctrl+C and edit the script otherwise continue by pressing any key..."
+echo "If you'd like to change this press Ctrl+C and edit the script otherwise continue by pressing enter..."
 read tmpvar
 
 timedatectl set-ntp true
@@ -44,7 +44,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 mv post.sh /mnt
 chmod +x /mnt/post.sh
 echo 'After you are chrooted execute the second part of the script with ./post.sh'
-echo 'Press any key to chroot...'
+echo 'Press enter to chroot...'
 read tmpvar
 arch-chroot /mnt
 rm -f /mnt/post.sh
