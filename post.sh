@@ -15,7 +15,7 @@ pacman -S sudo
 usermod -aG wheel,audio,video,optical,storage yee
 echo 'yee password'
 passwd yee
-sed -i '/%wheel ALL=(ALL) ALL/s/^#//g' /etc/sudoers.tmp
+sed -i '/%wheel ALL=(ALL) ALL/s/^#//g' /etc/sudoers
 grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
