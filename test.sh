@@ -12,8 +12,6 @@ echo 'Root password'
 passwd
 read -p 'What name do you want the regular user to have?: ' username
 useradd $username
-pacman -S sudo
-y
 usermod -aG wheel,audio,video,optical,storage $username
 echo 'Password for '$username
 passwd $username
