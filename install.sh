@@ -31,5 +31,5 @@ mount /dev/sda1 /mnt/boot/EFI
 pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager sudo
 genfstab -U /mnt >> /mnt/etc/fstab
 mv post.sh /mnt
-chmod +x /mnt/root/post.sh
+chmod +x /mnt/post.sh
 arch-chroot /mnt
