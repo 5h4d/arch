@@ -15,7 +15,7 @@ useradd $username
 pacman -S sudo
 y
 usermod -aG wheel,audio,video,optical,storage $username
-echo 'Password for regular user'
+echo 'Password for $username'
 passwd $username
 sed -i '/%wheel ALL=(ALL) ALL/s/^#//g' /etc/sudoers
 grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
