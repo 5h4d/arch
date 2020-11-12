@@ -4,6 +4,12 @@ then
   echo 'Edit script to install to a different drive or partitions'
   exit
 fi
+read -p 'Are you fine with 20GB of swap? [y/N]: ' checkswap
+if ! [ $checkswap = 'y' ] && ! [ $checkswap = 'Y' ]
+then 
+  echo 'Edit script to change swap size'
+  exit
+fi
 
 timedatectl set-ntp true
 sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
@@ -15,7 +21,7 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
   n
 
 
-  +4G
+  +20G   #edit this number to your desired swap size
   n
 
 
