@@ -6,7 +6,7 @@ then
 fi
 
 echo 'This script assigns 20GB of space on the disk to swap by default'
-echo 'If you'd like to change this press Ctrl+C and edit the script otherwise continue by pressing any key...'
+echo "If you'd like to change this press Ctrl+C and edit the script otherwise continue by pressing any key..."
 read tmpvar
 
 timedatectl set-ntp true
