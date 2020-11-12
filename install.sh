@@ -1,4 +1,4 @@
-fdisk /dev/sda
+fdisk ${TGTDEV}
 g
 n
 
