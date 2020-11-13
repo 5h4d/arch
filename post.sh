@@ -16,6 +16,8 @@ usermod -aG wheel,audio,video,optical,storage $username
 echo 'Password for '$username
 passwd $username
 sed -i '/%wheel ALL=(ALL) ALL/s/^#//g' /etc/sudoers
+mkdir /home/$username
+chown $username:$username /home/$username
 grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
