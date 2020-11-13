@@ -48,5 +48,6 @@ echo 'Press enter to chroot...'
 read tmpvar
 mkdir /mnt/home/user
 mv gui-programs.sh extensions.zip /mnt/home/user
+chmod +x /mnt/home/user/gui-programs.sh
 arch-chroot /mnt
 rm -f /mnt/post.sh
