@@ -46,7 +46,7 @@ chmod +x /mnt/post.sh
 echo 'After you are chrooted execute the second part of the script with ./post.sh'
 echo 'Press enter to chroot...'
 read tmpvar
-arch-chroot /mnt
-rm -f /mnt/post.sh
 mkdir /mnt/home/user
 mv gui-programs.sh extensions.zip /mnt/home/user
+arch-chroot /mnt
+rm -f /mnt/post.sh
