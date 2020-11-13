@@ -3,7 +3,7 @@ echo 'This script will install: wine, lutris, steam, discord, gparted, qbittorre
 echo 'Tap enter to continue...'
 read tmpvar
 sudo sed -i '/[multilib]/s/^#//g' /etc/pacman.conf
-sudo sed -i '/Include = /etc/pacman.d/mirrorlist/s/^#//g' /etc/pacman.conf
+sudo sed -i '/Include = \/etc\/pacman.d\/mirrorlist\/s\/^#\/\/g' /etc/pacman.conf
 sudo pacman -Syu
 sudo pacman -S wine lutris steam discord gparted qbittorrent gnome-shell-extensions python
 git clone http://aur.archlinux.org/yay-git.git
