@@ -5,7 +5,7 @@ read tmpvar
 sudo sed -i '/^#\[multilib]/{n;s/^#//}' /etc/pacman.conf
 sudo sed -i 's/#\[multilib]/\[multilib]/g' /etc/pacman.conf
 sudo pacman -Syu
-sudo pacman -S wine lutris steam discord gparted qbittorrent gnome-shell-extensions python
+sudo pacman -S wine lutris steam discord gparted qbittorrent
 git clone http://aur.archlinux.org/yay-git.git
 git clone https://aur.archlinux.org/gnome-shell-extension-ubuntu-dock.git
 git clone https://aur.archlinux.org/idle-python3.7-assets.git
