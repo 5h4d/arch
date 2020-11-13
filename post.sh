@@ -11,13 +11,13 @@ echo '127.0.1.1     arch.localdomain    arch' >> /etc/hosts
 echo 'Root password'
 passwd
 read -p 'What name do you want the regular user to have?: ' username
-useradd $username
+useradd -d /home/user $username
 usermod -aG wheel,audio,video,optical,storage $username
 echo 'Password for '$username
 passwd $username
 sed -i '/%wheel ALL=(ALL) ALL/s/^#//g' /etc/sudoers
-mkdir /home/$username
-chown $username:$username /home/$username
+mkdir /home/user
+chown $username:$username /home/user
 grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
