@@ -19,6 +19,7 @@ cd ..
 cd idle-python3.7-assets
 makepkg -si
 cd ..
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 cd spotify
 makepkg -si
 cd ..
