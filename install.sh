@@ -5,7 +5,7 @@ then
   exit
 fi
 
-read -p 'What amount of storage would you like to dedicate to swap?(example: 20G, make sure the format is correct): ' swapsize
+read -p 'What amount of storage would you like to dedicate to swap?(example: 20G) make sure the format is correct: ' swapsize
 
 timedatectl set-ntp true
 sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
