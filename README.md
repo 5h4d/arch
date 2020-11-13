@@ -13,3 +13,5 @@ chmod +x install.sh
 ```
 
 then follow the instructions and you should be all good
+
+After the system is installed and you boot into gnome, you can choose to install Discord, Steam, Wine, Lutris, Google Chrome, Spotify, GPartedand some gnome extensions by running ./gui-programs.sh (Lutris will be configured for AMD)
