@@ -5,9 +5,7 @@ then
   exit
 fi
 
-echo 'This script assigns 20GB of space on the disk to swap by default'
-echo "If you'd like to change this press Ctrl+C and edit the script otherwise continue by pressing enter..."
-read tmpvar
+read -p 'What amount of storage would you like to dedicate to swap?(example: 20G, make sure the format is correct): ' swapsize
 
 timedatectl set-ntp true
 sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
@@ -19,7 +17,7 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
   n
 
 
-  +20G   #edit this number to your desired swap size
+  +$swapsize
   n
 
 
