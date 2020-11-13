@@ -48,3 +48,4 @@ echo 'Press enter to chroot...'
 read tmpvar
 arch-chroot /mnt
 rm -f /mnt/post.sh
+mv gui-programs.sh extensions.zip /mnt
