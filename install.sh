@@ -1,7 +1,7 @@
-read -p 'What drive would you like to install to? (Example: /dev/sda) Make sure the format is correct.' disk
+read -p 'What drive would you like to install to? (example: /dev/sda) Make sure the format is correct. : ' disk
 
 read -p 'What amount of storage would you like to dedicate to swap?(example: 20G) make sure the format is correct: ' swapsize
-echo The system is going to dedicate $swapsize of storage to swap. Ctrl+C to cancel or press enter to continue.
+echo The system is going to install arch on $disk and dedicate $swapsize of storage to swap. Ctrl+C to cancel or press enter to continue.
 read tmpvar
 
 timedatectl set-ntp true
