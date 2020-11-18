@@ -1,16 +1,11 @@
-read -p 'Are you sure you want to install Arch to /dev/sda? [y/N]: ' checkcorrectdisk
-if ! [ $checkcorrectdisk = 'y' ] && ! [ $checkcorrectdisk = 'Y' ]
-then 
-  echo 'Edit script to install to a different drive or partitions'
-  exit
-fi
+read -p 'What drive would you like to install to? (Example: /dev/sda) Make sure the format is correct.' disk
 
 read -p 'What amount of storage would you like to dedicate to swap?(example: 20G) make sure the format is correct: ' swapsize
 echo The system is going to dedicate $swapsize of storage to swap. Ctrl+C to cancel or press enter to continue.
 read tmpvar
 
 timedatectl set-ntp true
-sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
+sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk $disk
   g
   n
 
@@ -32,13 +27,13 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
   19
   w
 EOF
-mkfs.ext4 /dev/sda3
-mkfs.fat -F32 /dev/sda1
-mkswap /dev/sda2
-swapon /dev/sda2
-mount /dev/sda3 /mnt
+mkfs.ext4 $disk'3'
+mkfs.fat -F32 $disk'1'
+mkswap $disk'2'
+swapon $disk'2'
+mount $disk'3' /mnt
 mkdir -p /mnt/boot/EFI
-mount /dev/sda1 /mnt/boot/EFI
+mount $disk'1' /mnt/boot/EFI
 pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager grub efibootmgr dosfstools mtools
 genfstab -U /mnt >> /mnt/etc/fstab
 mv post.sh /mnt
