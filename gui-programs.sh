@@ -1,18 +1,14 @@
 #Execute this script once you boot into the gui.
-echo 'This script will install: wine, lutris, steam, discord, gparted, qbittorrent, spotify, google chrome, python, idle, java and some gnome extensions'
+echo 'This script will install: wine, lutris, steam, discord, gparted, qbittorrent, spotify, chromium, python, idle, java and some gnome extensions'
 echo 'Tap enter to continue...'
 read tmpvar
 sudo sed -i '/^#\[multilib]/{n;s/^#//}' /etc/pacman.conf
 sudo sed -i 's/#\[multilib]/\[multilib]/g' /etc/pacman.conf
 sudo pacman -Syu
-sudo pacman -S lutris steam discord gparted qbittorrent jdk-openjdk
-git clone https://aur.archlinux.org/google-chrome.git
+sudo pacman -S lutris steam discord gparted qbittorrent jdk-openjdk chromium
 git clone https://aur.archlinux.org/gnome-shell-extension-ubuntu-dock.git
 git clone https://aur.archlinux.org/idle-python3.7-assets.git
 git clone https://aur.archlinux.org/spotify.git
-cd google-chrome
-makepkg -si
-cd ..
 cd gnome-shell-extension-ubuntu-dock
 makepkg -si
 cd ..
