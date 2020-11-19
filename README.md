@@ -4,8 +4,7 @@ I just want to make clear that this is by no means perfect, it's just a little p
 # HOW TO USE
 after booting into your installation drive execute these commands:
 ```
-pacman -Sy
-pacman -S git
+pacman -Sy git
 git clone http://github.com/5h4d/arch.git
 cd arch
 chmod +x install.sh
