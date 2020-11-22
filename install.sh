@@ -34,7 +34,7 @@ swapon $disk'2'
 mount $disk'3' /mnt
 mkdir -p /mnt/boot/EFI
 mount $disk'1' /mnt/boot/EFI
-pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager grub efibootmgr dosfstools mtools
+pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager grub efibootmgr dosfstools mtools neofetch
 genfstab -U /mnt >> /mnt/etc/fstab
 mv post.sh /mnt
 chmod +x /mnt/post.sh
