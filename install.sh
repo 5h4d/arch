@@ -42,7 +42,8 @@ echo 'After you are chrooted execute the second part of the script with ./post.s
 echo 'Press enter to chroot...'
 read tmpvar
 mkdir /mnt/home/user
-mv gui-programs.sh extensions.zip /mnt/home/user
+mv gui-programs.sh extensions.zip discordsoundshare.sh /mnt/home/user
 chmod +x /mnt/home/user/gui-programs.sh
+chmod +x /mnt/home/user/discordsoundshare.sh
 arch-chroot /mnt
 rm -f /mnt/post.sh
