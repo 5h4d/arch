@@ -1,3 +1,4 @@
+#!/bin/bash
 #Execute this script once you boot into the gui.
 echo 'This script will install: wine, lutris, steam, discord, gparted, qbittorrent, spotify, chromium, python, idle, gimp, java and some gnome extensions'
 echo 'Tap enter to continue...'
