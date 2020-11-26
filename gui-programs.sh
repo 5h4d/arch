@@ -6,7 +6,7 @@ read tmpvar
 sudo sed -i '/^#\[multilib]/{n;s/^#//}' /etc/pacman.conf
 sudo sed -i 's/#\[multilib]/\[multilib]/g' /etc/pacman.conf
 sudo pacman -Syu
-sudo pacman -S lutris steam discord gparted qbittorrent jdk-openjdk chromium gimp pulseaudio pavucontrol python python-pip
+sudo pacman -S lutris steam discord gparted qbittorrent jdk-openjdk chromium gimp pulseaudio pavucontrol python python-pip fish
 pip install discover-overlay
 git clone https://aur.archlinux.org/gnome-shell-extension-ubuntu-dock.git
 git clone https://aur.archlinux.org/idle-python3.7-assets.git
@@ -36,3 +36,6 @@ sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-
 chromium https://wiki.archlinux.org/index.php/Plymouth
 echo 'Execute "pactl list sources" and copy the name of a running source. Execute "pactl list sinks" (preferably while something is playing) and copy the name of a running sink. Go to discordsoundshare.sh and replace [NAME OF MIC] with name of mic and [NAME OF OUTPUT] with the name of the output (sink).'
 echo 'Save that and then open pavu, go to recording and choose "Monitor of Null Output". Go to Playback and in your desired app choose "Simultaneous Output to..........., Null Output" Open settings and try muting the sound sources until you do not hear yourself. Enjoy'
+echo "If you'd like to use fish as your default shell press Enter otherwise ctrl+c"
+read tmpvar
+chsh -s /usr/bin/fish
