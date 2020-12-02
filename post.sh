@@ -1,7 +1,7 @@
 ln -sf /usr/share/zoneinfo/Europe/Bratislava /etc/localtime
 hwclock --systohc
-sed -i '/en_US.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
-sed -i '/sk_SK.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
+sed -i '/en_US.UTF-8/s/^#//g' /etc/locale.gen
+sed -i '/sk_SK.UTF-8/s/^#//g' /etc/locale.gen
 locale-gen
 echo 'LANG=en_US.UTF-8' >> /etc/locale.conf
 read -p 'What do you want this system to be called?: ' archname
