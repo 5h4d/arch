@@ -13,6 +13,7 @@ git clone https://aur.archlinux.org/idle-python3.7-assets.git
 git clone https://aur.archlinux.org/spotify.git
 git clone https://aur.archlinux.org/gdm-plymouth.git
 git clone https://aur.archlinux.org/yay-git.git
+git clone https://aur.archlinux.org/ffmpeg-compat-57.git
 cd gnome-shell-extension-ubuntu-dock
 makepkg -si
 cd ..
@@ -23,6 +24,9 @@ cd idle-python3.7-assets
 makepkg -si
 cd ..
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
+cd ffmpeg-compat-57
+makepkg -si
+cd ..
 cd spotify
 makepkg -si
 cd ..
