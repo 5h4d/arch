@@ -13,7 +13,7 @@ chmod +x install.sh
 
 then follow the instructions and you should be all good
 
-After the system is installed and you boot into gnome, you can choose to install Discord, Steam, Wine, Lutris, Chromium, Spotify, qBitTorrent, GParted, java and some gnome extensions by running ./gui-programs.sh and following instructions. (Lutris will be configured for AMD)
+After the system is installed and you boot into gnome, you can choose to install Discord, Steam, Wine, Lutris, Brave, Spotify, qBitTorrent, GParted, java and some gnome extensions by running ./gui-programs.sh and following instructions. (Lutris will be configured for AMD)
 
 
 Thread for the discord recorder thing: https://www.reddit.com/r/discordapp/comments/f22vz6/guide_how_to_stream_audio_to_discord_on_linux/
