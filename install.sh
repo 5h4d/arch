@@ -26,7 +26,7 @@ mount $disk'2' /mnt
 mkdir -p /mnt/boot/EFI
 mount $disk'1' /mnt/boot/EFI
 fallocate -l $swapsize /mnt/swapfile
-chmod 600 /mnt/wapfile
+chmod 600 /mnt/swapfile
 mkswap /mnt/swapfile
 swapon /mnt/swapfile
 pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager grub efibootmgr dosfstools mtools neofetch cups
