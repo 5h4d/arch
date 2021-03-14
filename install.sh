@@ -12,28 +12,23 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk $disk
 
   +550M
   n
-
-
-  +$swapsize
-  n
-
-
-
+  
+  
+  
   t
   1
   1
-  t
-  2
-  19
   w
 EOF
-mkfs.ext4 $disk'3'
+mkfs.ext4 $disk'2'
 mkfs.fat -F32 $disk'1'
-mkswap $disk'2'
-swapon $disk'2'
-mount $disk'3' /mnt
+mount $disk'2' /mnt
 mkdir -p /mnt/boot/EFI
 mount $disk'1' /mnt/boot/EFI
+fallocate -l $swapsize /mnt/swapfile
+chmod 600 /mnt/swapfile
+mkswap /mnt/swapfile
+swapon /mnt/swapfile
 pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager grub efibootmgr dosfstools mtools neofetch cups
 genfstab -U /mnt >> /mnt/etc/fstab
 mv post.sh /mnt
