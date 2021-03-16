@@ -29,7 +29,7 @@ fallocate -l $swapsize /mnt/swapfile
 chmod 600 /mnt/swapfile
 mkswap /mnt/swapfile
 swapon /mnt/swapfile
-pacstrap /mnt base base-devel linux linux-firmware git nano gnome networkmanager grub efibootmgr dosfstools mtools neofetch cups
+pacstrap /mnt base base-devel linux linux-firmware git vim gnome networkmanager grub efibootmgr dosfstools mtools neofetch cups
 genfstab -U /mnt >> /mnt/etc/fstab
 mv post.sh /mnt
 chmod +x /mnt/post.sh
