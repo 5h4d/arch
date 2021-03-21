@@ -38,7 +38,7 @@ chown :$username /.snapshots
 rm /etc/snapper/configs/root
 rm /etc/snapper/configs/home
 mv root /etc/snapper/configs/root
-mv home /etc/snapper/configs/home
+mv hom /etc/snapper/configs/home
 ffff=$(echo "ffff" | sed -e 's/[]$.*[\^]/\\&/g' )
 sed -i -e "s/ffff/${username}/g" /etc/snapper/configs/root
 sed -i -e "s/ffff/${username}/g" /etc/snapper/configs/home
