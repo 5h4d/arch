@@ -30,4 +30,4 @@ systemctl enable cups.service
 systemctl enable snapper-timeline.timer
 systemctl enable snapper-cleanup-timer
 systemctl enable grub-btrfs.path
-echo 'All done, exit chroot and off you go'
+echo 'All done, exit chroot and off you go.  (Don't forget to execute snapper-config.sh)'
