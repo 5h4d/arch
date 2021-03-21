@@ -41,7 +41,7 @@ mount -o noatime,compress=lzo,subvol=@home $disk'3' /mnt/home
 mount $disk'1' /mnt/boot/
 mkswap $disk'2'
 swapon $disk'2'
-pacstrap /mnt base base-devel linux linux-firmware git vim gnome networkmanager grub efibootmgr dosfstools mtools neofetch cups btrfs-progs grub-btrfs snapper
+pacstrap /mnt base base-devel linux linux-firmware linux-headers git vim gnome networkmanager grub efibootmgr dosfstools mtools neofetch cups btrfs-progs grub-btrfs snapper
 genfstab -U /mnt >> /mnt/etc/fstab
 mv post.sh /mnt
 chmod +x /mnt/post.sh
