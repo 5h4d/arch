@@ -34,12 +34,10 @@ mkfs.fat -F32 $disk'1'
 mount $disk'3' /mnt
 btrfs su cr /mnt/@
 btrfs su cr /mnt/@home
-btrfs su cr /mnt/@snapshots
 umount -l /mnt
 mount -o noatime,compress=lzo,subvol=@ $disk'3' /mnt/
-mkdir -p /mnt/{boot,home,.snapshots}
+mkdir -p /mnt/{boot,home}
 mount -o noatime,compress=lzo,subvol=@home $disk'3' /mnt/home
-mount -o noatime,compress=lzo,subvol=@snapshots $disk'3' /mnt/.snapshots
 mount $disk'1' /mnt/boot/
 mkswap $disk'2'
 swapon $disk'2'
