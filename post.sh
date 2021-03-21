@@ -21,8 +21,6 @@ chown $username:$username /home/user
 chown $username:$username /home/user/gui-programs.sh
 chown $username:$username /home/user/extensions.zip
 chown $username:$username /home/user/discordsoundshare.sh
-chown $username:$username /home/user/rot
-chown $username:$username /home/user/hom
 chown $username:$username /home/user/snapper-config.sh
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub_uefi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
