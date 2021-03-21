@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo su
 umount -l /.snapshots
 rm -rf /.snapshots
 snapper -c root create-config /
@@ -13,4 +12,3 @@ mv hom /etc/snapper/configs/home
 ffff=$(echo "ffff" | sed -e 's/[]$.*[\^]/\\&/g' )
 sed -i -e "s/ffff/${user}/g" /etc/snapper/configs/root
 sed -i -e "s/ffff/${user}/g" /etc/snapper/configs/home
-exit
