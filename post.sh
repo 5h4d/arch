@@ -24,6 +24,8 @@ chown $username:$username /home/user/discordsoundshare.sh
 chown $username:$username /home/user/snapper-config.sh
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub_uefi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
+sed -i 's/MODULES=()/MODULES=(btrfs)/g' /etc/mkinitcpio.conf
+mkinitcpio -P linux
 systemctl enable NetworkManager
 systemctl enable gdm.service
 systemctl enable cups.service
