@@ -20,16 +20,25 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk $disk
   1
   w
 EOF
-mkfs.ext4 $disk'2'
+mkfs.btrfs $disk'2'
 mkfs.fat -F32 $disk'1'
 mount $disk'2' /mnt
-mkdir -p /mnt/boot/EFI
-mount $disk'1' /mnt/boot/EFI
-fallocate -l $swapsize /mnt/swapfile
-chmod 600 /mnt/swapfile
-mkswap /mnt/swapfile
-swapon /mnt/swapfile
-pacstrap /mnt base base-devel linux linux-firmware git vim gnome networkmanager grub efibootmgr dosfstools mtools neofetch cups
+btrfs su cr /mnt/@
+btrfs su cr /mnt/@home
+btrfs su cr /mnt/@swap
+btrfs su cr /mnt/@snapshots
+umount -l /mnt
+mount -o noatime,compress=lzo,subvol=@ $disk'2' /mnt/
+mkdir -p /mnt/{boot,home,swap,.snapshots}
+mount -o noatime,compress=lzo,subvol=@home $disk'2' /mnt/home
+mount -o noatime,compress=lzo,subvol=@swap $disk'2' /mnt/swap
+mount -o noatime,compress=lzo,subvol=@snapshots $disk'2' /mnt/.snapshots
+mount $disk'1' /mnt/boot/
+fallocate -l $swapsize /mnt/swap/swapfile
+chmod 600 /mnt/swap/swapfile
+mkswap /mnt/swap/swapfile
+swapon /mnt/swap/swapfile
+pacstrap /mnt base base-devel linux linux-firmware git vim gnome networkmanager grub efibootmgr dosfstools mtools neofetch cups btrfs-progs grub-btrfs
 genfstab -U /mnt >> /mnt/etc/fstab
 mv post.sh /mnt
 chmod +x /mnt/post.sh
