@@ -40,7 +40,7 @@ mkswap /mnt/swap/swapfile
 swapon /mnt/swap/swapfile
 pacstrap /mnt base base-devel linux linux-firmware git vim gnome networkmanager grub efibootmgr dosfstools mtools neofetch cups btrfs-progs grub-btrfs snapper
 genfstab -U /mnt >> /mnt/etc/fstab
-mv post.sh /mnt
+mv post.sh home root /mnt
 chmod +x /mnt/post.sh
 echo 'After you are chrooted execute the second part of the script with ./post.sh'
 echo 'Press enter to chroot...'
