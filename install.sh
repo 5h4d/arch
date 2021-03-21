@@ -4,6 +4,8 @@ read -p 'What amount of storage would you like to dedicate to swap?(example: 20G
 echo The system is going to install arch on $disk and dedicate $swapsize of storage to swap. Ctrl+C to cancel or press enter to continue.
 read tmpvar
 
+pacman -S wipe
+wipe $disk
 timedatectl set-ntp true
 sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk $disk
   g
