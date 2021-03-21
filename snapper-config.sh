@@ -1,6 +1,4 @@
 #!/bin/bash
-sudo umount -l /.snapshots
-sudo rm -rf /.snapshots
 sudo snapper -c root create-config /
 sudo snapper -c home create-config /home
 sudo chmod a+rx /.snapshots
