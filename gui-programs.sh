@@ -6,7 +6,7 @@ read tmpvar
 sudo sed -i '/^#\[multilib]/{n;s/^#//}' /etc/pacman.conf
 sudo sed -i 's/#\[multilib]/\[multilib]/g' /etc/pacman.conf
 sudo pacman -Syu
-sudo pacman -S lutris steam discord gparted qbittorrent jdk-openjdk gimp pulseaudio pavucontrol python python-pip fish vlc gtk-engine-murrine gtk-engines
+sudo pacman -S lutris steam discord gparted qbittorrent jdk-openjdk gimp pulseaudio pavucontrol python python-pip fish vlc gtk-engine-murrine gtk-engines gnome-tweaks
 pip install discover-overlay
 git clone https://aur.archlinux.org/gnome-shell-extension-ubuntu-dock.git
 git clone https://aur.archlinux.org/idle-python3.7-assets.git
