@@ -54,5 +54,6 @@ mkdir /mnt/home/user
 mv gui-programs.sh extensions.zip discordsoundshare.sh hom rot snapper-config.sh /mnt/home/user
 chmod +x /mnt/home/user/gui-programs.sh
 chmod +x /mnt/home/user/discordsoundshare.sh
+chmod +x /mnt/home/user/snapper-config.sh
 arch-chroot /mnt
 rm -f /mnt/post.sh
