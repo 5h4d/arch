@@ -45,13 +45,13 @@ mkswap $disk'2'
 swapon $disk'2'
 pacstrap /mnt base base-devel linux linux-firmware git vim gnome networkmanager grub efibootmgr dosfstools mtools neofetch cups btrfs-progs grub-btrfs snapper
 genfstab -U /mnt >> /mnt/etc/fstab
-mv post.sh hom rot /mnt
+mv post.sh /mnt
 chmod +x /mnt/post.sh
 echo 'After you are chrooted execute the second part of the script with ./post.sh'
 echo 'Press enter to chroot...'
 read tmpvar
 mkdir /mnt/home/user
-mv gui-programs.sh extensions.zip discordsoundshare.sh /mnt/home/user
+mv gui-programs.sh extensions.zip discordsoundshare.sh hom rot snapper-config.sh /mnt/home/user
 chmod +x /mnt/home/user/gui-programs.sh
 chmod +x /mnt/home/user/discordsoundshare.sh
 arch-chroot /mnt
