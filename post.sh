@@ -21,9 +21,14 @@ chown $username:$username /home/user
 chown $username:$username /home/user/gui-programs.sh
 chown $username:$username /home/user/extensions.zip
 chown $username:$username /home/user/discordsoundshare.sh
-grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub_uefi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
 systemctl enable gdm.service
 systemctl enable cups.service
+systemctl enable snapper-timeline.timer
+systemctl enable snapper-cleanup-timer
+systemctl enable grub-btrfs.path
+umount -l /.snapshots
+rm -rf /.snapshots
 echo 'All done, exit chroot and off you go'
