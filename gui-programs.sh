@@ -1,12 +1,12 @@
 #!/bin/bash
 #Execute this script once you boot into the gui.
-echo 'This script will install: wine, lutris, steam, discord, gparted, qbittorrent, brave, python, idle, gimp, java, vlc and some gnome extensions'
+echo 'This script will install: wine, lutris, steam, discord, gparted, qbittorrent, python, idle, gimp, java, vlc and some gnome extensions'
 echo 'Tap enter to continue...'
 read tmpvar
-sudo sed -i '/^#\[multilib]/{n;s/^#//}' /etc/pacman.conf
-sudo sed -i 's/#\[multilib]/\[multilib]/g' /etc/pacman.conf
-sudo pacman -Syu
-sudo pacman -S lutris steam discord gparted qbittorrent jdk-openjdk gimp pulseaudio pavucontrol python python-pip fish vlc gtk-engine-murrine gtk-engines gnome-tweaks
+doas sed -i '/^#\[multilib]/{n;s/^#//}' /etc/pacman.conf
+doas sed -i 's/#\[multilib]/\[multilib]/g' /etc/pacman.conf
+doas pacman -Syu
+doas pacman -S lutris steam discord gparted qbittorrent jdk-openjdk gimp pulseaudio pavucontrol python python-pip fish vlc gtk-engine-murrine gtk-engines gnome-tweaks
 pip install discover-overlay
 git clone https://aur.archlinux.org/gnome-shell-extension-ubuntu-dock.git
 git clone https://aur.archlinux.org/idle-python3.7-assets.git
