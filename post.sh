@@ -26,7 +26,7 @@ bootctl install
 echo "default arch.conf" >> /boot/loader/loader.conf
 echo "editor no" >> /boot/loader/loader.conf
 sed -i 's/MODULES=()/MODULES=(btrfs)/g' /etc/mkinitcpio.conf
-sed -i 's/HOOKS=(base udev autodetect modconf block encrypt filesystems fsck)/HOOKS=(base udev autodetect keyboard modconf block encrypt filesystems fsck)' /etc/mkinitcpio.conf
+sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev autodetect keyboard modconf block encrypt filesystems fsck)' /etc/mkinitcpio.conf
 mkinitcpio -P linux
 systemctl enable NetworkManager
 systemctl enable gdm.service
