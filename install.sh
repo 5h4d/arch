@@ -43,7 +43,7 @@ dd if=/dev/zero of=/mnt/swap/swapfile bs=$swapsize count=1 status=progress
 chmod 600 /mnt/swap/swapfile
 mkswap /mnt/swap/swapfile
 swapon /mnt/swap/swapfile
-pacstrap /mnt base base-devel linux linux-firmware linux-headers git vim gnome networkmanag neofetch cups btrfs-progs snapper doas
+pacstrap /mnt base base-devel linux linux-firmware linux-headers git vim gnome networkmanager neofetch cups btrfs-progs snapper doas
 genfstab -U /mnt >> /mnt/etc/fstab
 mv post.sh /mnt
 chmod +x /mnt/post.sh
