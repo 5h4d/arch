@@ -25,9 +25,6 @@ chown $username:$username /home/user/snapper-config.sh
 bootctl install
 echo "default arch.conf" >> /boot/loader/loader.conf
 echo "editor no" >> /boot/loader/loader.conf
-echo "Title Arch" >> /boot/loader/entries/arch.conf
-echo "linux /vmlinuz-linux" >> /boot/loader/entries/arch.conf
-echo "initrd /initramfs-linux.img" >> /boot/loader/entries/arch.conf
 sed -i 's/MODULES=()/MODULES=(btrfs)/g' /etc/mkinitcpio.conf
 sed -i 's/HOOKS=(base udev autodetect modconf block encrypt filesystems fsck)/HOOKS=(base udev autodetect keyboard modconf block encrypt filesystems fsck)' /etc/mkinitcpio.conf
 mkinitcpio -P linux
