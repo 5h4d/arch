@@ -55,7 +55,7 @@ mv gui-programs.sh extensions.zip discordsoundshare.sh hom rot snapper-config.sh
 chmod +x /mnt/home/user/gui-programs.sh
 chmod +x /mnt/home/user/discordsoundshare.sh
 chmod +x /mnt/home/user/snapper-config.sh
-mkdir -p /boot/loader/entries
-echo "options cryptdevice="$disk'2:root root=/dev/mapper/root rootflags=subvolid=256' >> /boot/loader/entries/arch.conf
+mkdir -p /mnt/boot/loader/entries
+echo "options cryptdevice="$disk'2:root root=/dev/mapper/root rootflags=subvolid=256' >> /mnt/boot/loader/entries/arch.conf
 arch-chroot /mnt 
 rm -f /mnt/post.sh
